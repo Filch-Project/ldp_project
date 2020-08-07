@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h2>The optimal players position for this pick is <span style="color:#0000FF">{{ move }}</span>. </h2>
+    <h2>With the next best player in that position being <span style="color:#0000FF">{{ player }}</span>. </h2>
+    <br>
+    <h4>Do you want this player?</h4>
+    <form method="POST" id="mypick">
+      {% csrf_token %}
+      <!-- <input type="submit"  class="btn btn-outline-info" name ="accept" value="Accept Pick" > -->
+      <button type="button"  id="btnAcceptPick" class="btn btn-outline-info" name ="accept">Accept Pick</button>
+    </form>
+      <br>
+      <h1>Or</h1>
+      <br>
+    <form method="POST" >
+      <h4>Choose the player you want.</h4>
+      {% csrf_token %}
+      {{ form|crispy }}
+      <input type="submit"  id="btnChoosePick" class="btn btn-outline-info"  name="choose" value="Choose My Own Pick">
+    </form>
+    <br><br><br>
+
+{% endblock content %}

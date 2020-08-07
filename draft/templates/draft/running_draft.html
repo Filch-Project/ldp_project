@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<body>
+  {% if  pick  == 'manual' %}
+      <h1>What Player did the number {{ rosterteam }} draftee pick for draft round #{{ draftround }}?</h1>
+      <br>
+      <div id="loading">
+        <form method="POST" id="pick" >
+          {% csrf_token %}
+          {{ form|crispy }}
+          <button type="button" id="btnFetch" class="btn btn-outline-info">Commit</button>
+        </form>
+      </div>
+      <br><br><br>
+  {% else %}
+      <h1>It's your turn!</h1>
+      <h2>Are you ready to make your number {{ draftround }} draft pick?</h2>
+      <br>
+      <div id="loading">
+      <form class="form-inline" action={% url 'mypick' %} method="POST" id="pick">
+        {% csrf_token %}
+        <button type="button" id="btnFetch" class="btn btn-outline-info">Generate Pick</button>
+      </form>
+      </div>
+      <div id="result"></div>
+  {% endif %}
+  <br><br><br>
+</body>
+{% endblock content %}

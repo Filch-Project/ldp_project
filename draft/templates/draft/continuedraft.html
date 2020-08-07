@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+  {% if  status  == 'complete' %}
+  <h1>You have a completed draft with a draft postion of {{ players_draft_position }}.  What would you like to do?</h1>
+    <br>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-outline-info" name ="continue" value="See Results">
+        or
+      <input type="submit" class="btn btn-outline-info"  name="start_over" value="Start Over">
+    </form>
+  {% else %}
+    <h1>You already have a draft in progress with a draft postion of {{ players_draft_position }}.  What would you like to do?</h1>
+      <br>
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-outline-info" name ="continue" value="Continue">
+          or
+        <input type="submit" class="btn btn-outline-info"  name="start_over" value="Start Over">
+      </form>
+  {% endif %}
+  <br><br><br>
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="content-section">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+      </div>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          <legend class="boarder-bottom mb-6">Your Draft Options</legend>
+          <p>Enter the number of players you would like to draft for each position.  The total
+          number of players should equal the number of players you need to draft.</p>
+          <table>
+          {{ d_form.as_table }}
+          </table>
+          <p>***The sum of all positions must be equal to the
+          amount of players on your team at a minimum.***</p>
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Update</button>
+        </div>
+    </form>
+  </div>
+{% endblock content %}

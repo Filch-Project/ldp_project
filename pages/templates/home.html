@@ -1,0 +1,46 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h1>Welcome to the Lazy Draft Picker</h1>
+    <h5>This website is free to use.  No gimics.  <a href="{% url 'register' %}">Register</a> today to automate your draft picks. </h5>
+    <br>
+    <h3>What does this website do?</h3>
+    <p>Well if you are like me you are looking for an easy way to make the best pick at the right time.  It all boils down to the next best position (and some luck)
+      based on what your competitors have already picked <b>AND</b> what their next picks may be.</p>
+    <p>We simulate the draft based on the current round and who has already been picked to then determine what is the next best postiton needing to be filled.  After we
+      know what position to fill you will be provided with the next highest ranked player in that postion based off current overall Fantasy points from a collective
+      average from top sources on the internet.  Of course you will have the option to choose your own player if you like as well.</p>
+
+    <h3>What type of draft does this work for?</h3>
+    <p>Currently this works for snake style drafts only and teams that have at least one player in each position; Quaterback, Running Back, Wide Reciever,
+      Tight End, Kicker, and Defense. </p>
+
+    <h3>Getting Started:</h3>
+    <p>First you will need to create a free account by <a href="{% url 'register' %}">registering</a>.  You will then use the Setup Menu located on the right to do the following.</p>
+    <ul>
+      <li>Enter your "League Settings" - The number of teams in your league and the number of players to be drafted.</li>
+      <li>Enter your "Draft Options" - The maximum number of players you want for each position.</li>
+      <li>Run your draft</li>
+    </ul>
+<br>
+    <h3>Running Your Draft:</h3>
+    <p>Once you have input all of your settings select "Run Draft" from the menu bar.  If you are starting your draft for the first time
+      then you will be prompeted to enter your draft postition.  Otherwise you will have the option to continue with the draft that has
+      already started or start over.
+      <br><br>
+      This site has been loaded with 400 ranked players.  During the draft you will need to enter the players that have been picked by the other draftees in your league so that
+      we do not attempt to give those players to you.  If a player is not found in the list then their is no concern however you will need to enter a player for them so you may
+      need to pick some obscure player that no one else will pick.
+      <br><br>
+      When it is your turn you will be prompted with the next best postion for your team and the highest ranked
+      player in that postion.  You can accept the player that is presented or pick your own.</p>
+
+    <h3>Caution:</h3>
+    <p>Currently there is no consideration for players that are Questionable, Inactive, Injury, Suspension, etc.  So you will need to be aware of
+      what players are in one of these states before commiting a automated pick.  Also there isn't any bye week or opponent schedule analysis being done.</p>
+
+    <p>The only thing we are trying to do is pick the next best position based on who has already been drafted and simulating future picks to determine
+      what position you need to fill next.  Then simply providing you with the next highest ranked player in that position that is still available.</p>
+
+<h4>To learn more click <a href="{% url 'pages-about' %}">here</a>.</h4>
+
+{% endblock content %}

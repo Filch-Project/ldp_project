@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>Awesome Job.  You have completed your draft.  How sweet was that?</h1>
+    <br>
+    <br>
+    <h1>Here is your team:</h1>
+    <br>
+    {% for item in results %}
+      <tr>
+        <td>{{ item.name }} | </td>
+        <td>{{ item.team }} | </td>
+        <td>{{ item.position }} </td>
+        <br>
+      </tr>
+    {% endfor %}
+    <br><br><br>
+
+
+{% endblock content %}
