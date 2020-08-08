@@ -143,3 +143,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER') #THIS IS MY GMAIL EMAIL ADDRESS AND PASSWORD
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local file.  You must be on production")
