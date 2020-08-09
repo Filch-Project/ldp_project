@@ -1,11 +1,15 @@
 {% extends "blog/base.html" %}
+{% load static %}
 {% block content %}
     <h1>Welcome to the Lazy Draft Picker</h1>
-    <h5>This website is free to use.  No gimics.  <a href="{% url 'register' %}">Register</a> today to automate your draft picks. </h5>
+
+    <h5>This website is free to use.  No gimics.  <a href="{% url 'register' %}">Register</a> today to automate your NFL Fantasy Football draft picks. </h5>
     <br>
+    <img src="{{STATIC_URL}} /media/footballs_photo.jpg" alt="Image Not Found" width="725" height="450">
+    <br><br>
     <h3>What does this website do?</h3>
-    <p>Well if you are like me you are looking for an easy way to make the best pick at the right time.  It all boils down to the next best position (and some luck)
-      based on what your competitors have already picked <b>AND</b> what their next picks may be.</p>
+    <p>Well if you are like me you are looking for an easy way to make the best pick at the right time for your NFL Fantasy Football League.  It all boils down to
+      the next best position (and some luck) based on what your competitors have already picked <b>AND</b> what their next picks may be.</p>
     <p>We simulate the draft based on the current round and who has already been picked to then determine what is the next best postiton needing to be filled.  After we
       know what position to fill you will be provided with the next highest ranked player in that postion based off current overall Fantasy points from a collective
       average from top sources on the internet.  Of course you will have the option to choose your own player if you like as well.</p>
