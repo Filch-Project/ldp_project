@@ -25,7 +25,7 @@ SECRET_KEY = 'f+1lfm-qgqtnf#s6oj=o7l*+(+*kz6=*k(yh7z(lmifc(b&k29'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['adamg.pythonanywhere.com']
+ALLOWED_HOSTS = ['www.lazydraftpicker.com']
 
 
 # Application definition
